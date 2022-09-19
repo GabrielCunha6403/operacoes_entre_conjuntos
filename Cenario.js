@@ -106,9 +106,46 @@ for (let i = 0; i < qtd; i++) {
 
 //================================== FUNÇÃO DE DELIMITAÇÃO ==================================
 
-function delimitacao(x, y){
+function delimitacao1(x, y) {
+    return (Math.pow(x, 2) - (2 * x) + Math.pow(y, 2) - (4 * y) - 11);
+}
+
+function delimitacao2(x, y) {
+    return (Math.pow(x, 2) + (2 * x) + Math.pow(y, 2) - (6 * y) - 6);
+}
+
+function delimitacao3(x, y) {
+    return (Math.pow(x, 2) + (4 * x) + Math.pow(y, 2) - (2 * y) - 11);
+}
+
+function delimitacao4(x, y) {
+    return (Math.pow(x, 2) - (4 * x) + Math.pow(y, 2) - (2 * y) - 12);
+}
+
+function delimitacao5(x, y) {
+    return (Math.pow(x, 2) - (6 * x) + Math.pow(y, 2) + (2 * y) - 6);
+}
+
+function delimitacao6(x, y) {
+    return (Math.pow(x, 2) + Math.pow(y, 2) - (10 * y) + 9);
+}
+
+function delimitacao7(x, y) {
+    return (Math.pow(x, 2) + (6 * x) + Math.pow(y, 2) + (4 * y) - 3);
+}
+
+function delimitacao8(x, y){
     return (Math.pow(x, 2) - (10 * x) + Math.pow(y, 2) + (2 * y) + 10);
 }
+
+function delimitacao9(x, y) {
+    return (Math.pow(x, 2) - (14 * x) + Math.pow(y, 2) + (2 * y) + 34);
+}
+
+function delimitacao4(x, y) {
+    return (Math.pow(x, 2) - (8 * x) + Math.pow(y, 2) - (4 * y) + 4);
+}
+
 
 //================================== /FUNÇÃO DE DELIMITAÇÃO ==================================
 
@@ -117,7 +154,7 @@ function delimitacao(x, y){
 var matriz = new Matriz(qtd, qtd);
 for (let i = 0; i < qtd; i++) {
     for (let j = 0; j < qtd; j++) {
-        if(delimitacao(conjunto[i], conjunto[j]) <= 0)
+        if(delimitacao8(conjunto[i], conjunto[j]) <= 0)
             matriz.matriz[i][j] = 1;
         else
             matriz.matriz[i][j] = 0;
@@ -129,7 +166,7 @@ for (let i = 0; i < qtd; i++) {
 function reflexiva(matriz) {
     for (let i = 0; i < matriz.matriz.length; i++) {
         if(matriz.matriz[i][i] != 1)
-            return false;    
+            return false;
     }
     return true;
 }
