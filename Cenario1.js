@@ -106,42 +106,52 @@ for (let i = 0; i < qtd; i++) {
 
 //================================== FUNÇÃO DE DELIMITAÇÃO ==================================
 
+//{−3, −2, −1, 0, 1, 2, 3, 4, 5}
 function delimitacao1(x, y) {
     return (Math.pow(x, 2) - (2 * x) + Math.pow(y, 2) - (4 * y) - 11);
 }
 
+//{−5, −4, −3, −2, −1, 0, 1, 2, 3}
 function delimitacao2(x, y) {
     return (Math.pow(x, 2) + (2 * x) + Math.pow(y, 2) - (6 * y) - 6);
 }
 
+//{−6, −5, −4, −3, −2, −1, 0, 1, 2}
 function delimitacao3(x, y) {
     return (Math.pow(x, 2) + (4 * x) + Math.pow(y, 2) - (2 * y) - 11);
 }
 
+//{−2, −1, 0, 1, 2, 3, 4, 5, 6}
 function delimitacao4(x, y) {
     return (Math.pow(x, 2) - (4 * x) + Math.pow(y, 2) - (2 * y) - 12);
 }
 
+//{−1, 0, 1, 2, 3, 4, 5, 6, 7}
 function delimitacao5(x, y) {
     return (Math.pow(x, 2) - (6 * x) + Math.pow(y, 2) + (2 * y) - 6);
 }
 
+//{−4, −3, −2, −1, 0, 1, 2, 3, 4}
 function delimitacao6(x, y) {
     return (Math.pow(x, 2) + Math.pow(y, 2) - (10 * y) + 9);
 }
 
+//{−7, −6, −5, −4, −3, −2, −1, 0, 1}
 function delimitacao7(x, y) {
     return (Math.pow(x, 2) + (6 * x) + Math.pow(y, 2) + (4 * y) - 3);
 }
 
+//{1, 2, 3, 4, 5, 6, 7, 8, 9}
 function delimitacao8(x, y){
     return (Math.pow(x, 2) - (10 * x) + Math.pow(y, 2) + (2 * y) + 10);
 }
 
+//{3, 4, 5, 6, 7, 8, 9, 10, 11}
 function delimitacao9(x, y) {
     return (Math.pow(x, 2) - (14 * x) + Math.pow(y, 2) + (2 * y) + 34);
 }
 
+//{0, 1, 2, 3, 4, 5, 6, 7, 8}
 function delimitacao4(x, y) {
     return (Math.pow(x, 2) - (8 * x) + Math.pow(y, 2) - (4 * y) + 4);
 }
