@@ -155,6 +155,9 @@ function delimitacao9(x, y) {
 function delimitacao4(x, y) {
     return (Math.pow(x, 2) - (8 * x) + Math.pow(y, 2) - (4 * y) + 4);
 }
+function x(x, y) {
+    return Math.pow(x, 2);
+}
 
 
 //================================== /FUNÇÃO DE DELIMITAÇÃO ==================================
