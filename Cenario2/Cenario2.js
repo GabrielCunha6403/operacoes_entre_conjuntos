@@ -1,29 +1,45 @@
-//================================ MEGA SENA ================================
+var vetorNumeros = [];
+var sorteio = [13, 35, 45, 8, 29, 19];
+var qtdTentativas = 6;
+var contador = 0;
 
-var acumulador = 0;
-
-function createVetor() {
-    let vetorMegaSena = [6];
-    for (let i = 0; i < 6; i++) {
-        vetorMegaSena[i] = parseInt(Math.random() * 60);
-    }
-    return vetorMegaSena;
+function shuffle(array) {
+    array.sort(() => Math.random() - 0.5);
+    return array;
 }
 
-function validateMegaSena(vetor) {
-    for (let i = 0; i < 6; i++) {
-        if(vetor[i] != createVetor()[i])
+function equalsCheck(array1, array2) {
+    for (let i = 0; i < array1.length; i++) {
+        if(array1[i] != array2[i])
             return false;
     }
     return true;
 }
 
-var teste = [10, 20, 30, 40, 50, 55];
-
-while(!validateMegaSena(teste)){
-    acumulador++;
+for (let i = 0; i < 60; i++) {
+    vetorNumeros[i] = i + 1;
 }
 
-console.log(acumulador);
+/*for (let i = 0; i < 6; i++) {
+    sorteio[i] = parseInt(prompt('Digite o ' + (i + 1) + 'º número:'));
+}*/
 
-//================================ /MEGA SENA ================================
+
+var inicio = 0;
+var final = inicio + 6;
+var tentativa = shuffle(vetorNumeros).slice(inicio, final);
+
+do {
+    console.log(contador);
+    if(final < 60){
+        inicio += 6;
+        final += 6;
+        tentativa = vetorNumeros.slice(inicio, final);
+        contador++;
+    } else {
+        inicio = 0;
+        final = 6;
+        tentativa = shuffle(vetorNumeros).slice(inicio, final);
+        contador++;
+    }
+} while (!equalsCheck(tentativa, sorteio))
