@@ -1,7 +1,7 @@
 var vetorNumeros = [];
 var sorteio = [13, 35, 45, 8, 29, 19];
 var qtdTentativas = 6;
-var contador = 1;
+var contador = 0;
 var storage = [];
 
 function shuffle(array) {
@@ -41,7 +41,8 @@ function callFunction() {
       tentativa = shuffle(vetorNumeros).slice(inicio, final);
       contador++;
     }
-    console.log(contador + " - " + storage);
+    write(contador + " - " + storage);
+    //console.log(contador + " - " + storage);
   } while (
     !equalsCheck(appendDigit(tentativa, sorteio).sort(), sorteio.sort())
   );
@@ -58,4 +59,12 @@ function appendDigit(array1, array2) {
     }
   }
   return storage;
+}
+
+function write(label) {
+  let paragraphJS = document.createElement("p");
+  let content = document.createTextNode(label);
+
+  paragraphJS.appendChild(content);
+  document.getElementById("megaSena").appendChild(paragraphJS);
 }
