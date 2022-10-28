@@ -1,5 +1,7 @@
+//============================== MEGA SENA ==============================
+
 var vetorNumeros = [];
-var sorteio = [13, 35, 45, 8, 29, 19];
+var sorteio = [];
 var qtdTentativas = 6;
 var contador = 0;
 var storage = [];
@@ -20,15 +22,14 @@ for (let i = 0; i < 60; i++) {
   vetorNumeros[i] = i + 1;
 }
 
-/*for (let i = 0; i < 6; i++) {
-    sorteio[i] = parseInt(prompt('Digite o ' + (i + 1) + 'º número:'));
-}*/
-
 var inicio = 0;
 var final = inicio + 6;
 var tentativa = shuffle(vetorNumeros).slice(inicio, final);
 
-function callFunction() {
+function callMegaSena() {
+  for (let i = 0; i < 6; i++) {
+    sorteio[i] = parseInt(prompt("Digite o " + (i + 1) + "º número:"));
+  }
   do {
     if (final <= 60) {
       tentativa = vetorNumeros.slice(inicio, final);
@@ -67,4 +68,25 @@ function write(label) {
 
   paragraphJS.appendChild(content);
   document.getElementById("megaSena").appendChild(paragraphJS);
+}
+
+//============================== /MEGA SENA ==============================
+
+//============================== PLACA MERCOSUL ==============================
+
+/**QLN a QLT - Amapá
+ * QVA a QVZ - Pará
+ * RZA a RZD - Roraima
+ * */
+
+var placa;
+
+function callMercosul() {
+  placa = prompt("Digite a placa a ser consultada:");
+
+  switch (placa) {
+    case "P":
+      console.log("oi");
+      break;
+  }
 }

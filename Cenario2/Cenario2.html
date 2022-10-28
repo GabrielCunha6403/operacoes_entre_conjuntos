@@ -8,10 +8,26 @@
     <script type="text/javascript" src="Cenario2.js"></script>
   </head>
   <body>
-    <div id="megaSena"></div>
-    <div id="subArea"></div>
-    <button onclick="callFunction()">Operação</button>
-
+    <div
+      style="
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: space-around;
+      "
+    >
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div id="megaSena"></div>
+        <button onclick="callMegaSena()" style="height: 50px">Operação</button>
+      </div>
+      <div
+        id="mercosul"
+        style="display: flex; flex-direction: row; align-items: center"
+      >
+        <button onclick="callMercosul()">Checar placa</button>
+        <div id="mercosulContent"></div>
+      </div>
+    </div>
     <meta charset="8-UTF" />
     <link href="Cenario2.css" rel="stylesheet" />
   </body>
