@@ -1,7 +1,8 @@
 var vetorNumeros = [];
 var sorteio = [13, 35, 45, 8, 29, 19];
 var qtdTentativas = 6;
-var contador = 0;
+var contador = 1;
+var storage = [];
 
 function shuffle(array) {
   array.sort(() => Math.random() - 0.5);
@@ -9,7 +10,7 @@ function shuffle(array) {
 }
 
 function equalsCheck(array1, array2) {
-  for (let i = 0; i < array1.length; i++) {
+  for (let i = 0; i < array2.length; i++) {
     if (array1[i] != array2[i]) return false;
   }
   return true;
@@ -29,7 +30,6 @@ var tentativa = shuffle(vetorNumeros).slice(inicio, final);
 
 function callFunction() {
   do {
-    console.log(contador);
     if (final <= 60) {
       tentativa = vetorNumeros.slice(inicio, final);
       inicio += 6;
@@ -41,5 +41,21 @@ function callFunction() {
       tentativa = shuffle(vetorNumeros).slice(inicio, final);
       contador++;
     }
-  } while (!equalsCheck(tentativa, sorteio));
+    console.log(contador + " - " + storage);
+  } while (
+    !equalsCheck(appendDigit(tentativa, sorteio).sort(), sorteio.sort())
+  );
+
+  console.log("Tentativas: " + contador);
+}
+
+function appendDigit(array1, array2) {
+  for (let i = 0; i < array1.length; i++) {
+    for (let j = 0; j < array2.length; j++) {
+      if (array1[i] == array2[j]) {
+        storage.push(array1[i]);
+      }
+    }
+  }
+  return storage;
 }
