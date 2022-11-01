@@ -35,18 +35,18 @@ function callMegaSena() {
       tentativa = vetorNumeros.slice(inicio, final);
       inicio += 6;
       final += 6;
-      contador++;
     } else {
       inicio = 0;
       final = 6;
       tentativa = shuffle(vetorNumeros).slice(inicio, final);
-      contador++;
     }
+    contador++;
     write(contador + " - " + storage);
     //console.log(contador + " - " + storage);
   } while (
     !equalsCheck(appendDigit(tentativa, sorteio).sort(), sorteio.sort())
   );
+  write(contador + " - " + storage);
 
   console.log("Tentativas: " + contador);
 }
